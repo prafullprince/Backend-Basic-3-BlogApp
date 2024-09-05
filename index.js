@@ -4,7 +4,7 @@ require("dotenv").config();
 // import database
 const database = require("./config/database");
 // import routes
-
+const blogRoutes = require('./routes/bolg');
 
 // make app
 const app = express();
@@ -19,7 +19,7 @@ database();
 app.use(express.json());
 
 // makes routes
-
+app.use('/api/v1/post',blogRoutes);
 
 // listen our app on given port
 app.listen(PORT,()=>{
